@@ -1,0 +1,130 @@
+{
+  "name": "valoa",
+  "icon": "valoa.ico",
+  "productName": "Globe",
+  "companyName": "Valoa",
+  "description": "Your favorite private web browser",
+  "version": "3.2.0",
+  "license": "GPL-3.0",
+  "keywords": [
+    "browser",
+    "electron-app",
+    "chromium",
+    "electron",
+    "nodejs",
+    "web",
+    "beta",
+    "windows",
+    "linux",
+    "web-browser",
+    "js",
+    "private",
+    "privacy",
+    "valoa",
+    "electron-builder"
+  ],
+  "author": {
+    "name": "Globe",
+    "email": "valoa.info@gmail.com"
+  },
+  "main": "main.js",
+  "homepage": "",
+  "bugs": {
+    "url": "https://valoa.netlify.app"
+  },
+  "repository": {
+    "url": ""
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist": "build --win --linux",
+    "dist-win": "build --win",
+    "dist-linux": "build --linux"
+  },
+  "dependencies": {
+    "color.js": "^0.1.3",
+    "dragula": "^3.7.2",
+    "electron-builder-squirrel-windows": "^21.2.0",
+    "electron-log": "^2.2.17",
+    "electron-updater": "^4.0.6",
+    "file-extension": "^4.0.5",
+    "get-ssl-certificate": "^2.3.2",
+    "get-title-at-url": "^1.1.6",
+    "is-dark-color": "^1.2.0",
+    "is-directory": "^0.3.1",
+    "parse-path": "^4.0.1",
+    "parse-url": "^5.0.1",
+    "persist-path": "^1.0.2",
+    "prepend-file": "^1.3.1",
+    "readl-async": "0.0.4",
+    "readline-promise": "^1.0.4",
+    "suggestion": "^2.1.2",
+    "validate.io-uri": "^1.0.0"
+  },
+  "devDependencies": {
+    "electron": "^7.1.1",
+    "electron-builder": "^20.44.4",
+    "electron-packager": "^15.5.1"
+  },
+  "build": {
+    "appId": "Golbe",
+    "copyright": "Copyright © 2022 Valoa",
+    "fileAssociations": [
+      {
+        "ext": "htm",
+        "name": "Web page document [HTM]",
+        "description": "Web page document [HTM] - Valoa",
+        "role": "Viewer",
+        "icon": "imgs/valoa.png"
+      },
+      {
+        "ext": "html",
+        "name": "Web page document [HTML]",
+        "description": "Web page document [HTML] - Valoa",
+        "role": "Viewer",
+        "icon": "imgs/valoa.png"
+      }
+    ],
+    "nsis": {
+      "include": "installer.nsh",
+      "installerIcon": "imgs/valoa.png",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "asar": true,
+    "win": {
+      "publish": {
+        "provider": "github",
+        "repo": "valoa",
+        "owner": "Valoa",
+        "host": "github.com",
+        "protocol": "https",
+        "releaseType": "release"
+      },
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "imgs/icon.ico"
+    },
+    "mac": {
+      "category": "imgs/valoa.png"
+    },
+    "linux": {
+      "icon": "imgs/valoa.png",
+      "category": "Network",
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "imgs/valoa.png"
+          ]
+        }
+      ]
+    }
+  }
+}
